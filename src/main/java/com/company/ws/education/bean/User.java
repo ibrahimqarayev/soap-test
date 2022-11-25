@@ -2,10 +2,17 @@ package com.company.ws.education.bean;
 
 public class User {
 
+    private int id;
     private String name;
     private String surname;
 
     public User(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
+    }
+
+    public User(int id, String name, String surname) {
+        this.id = id;
         this.name = name;
         this.surname = surname;
     }
@@ -26,4 +33,11 @@ public class User {
         this.surname = surname;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
