@@ -5,9 +5,13 @@
  */
 package com.company.ws.education;
 
+import com.company.ws.education.bean.User;
+
+import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
-import javax.jws.WebService;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  *
@@ -19,8 +23,13 @@ public class EducationService {
     /**
      * This is a sample web service operation
      */
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
+    @WebMethod(operationName = "getUser")
+    public User getUser(@WebParam(name = "name") String name) {
+        return new User(name,null);
+    }
+
+    @WebMethod(operationName = "getAllUser")
+    public List<User> getAllUser(@WebParam(name = "name") String name, @WebParam(name = "surname") String surname) {
+        return Arrays.asList(new User(name,null));
     }
 }
